@@ -37,6 +37,8 @@ import { ErrorCode as MathJsonErrorCode } from './math-json/public';
 import { ErrorCode, Form, Expression, Dictionary } from './math-json/public';
 import { parseLatex, emitLatex } from './math-json/math-json';
 import { ParseLatexOptions, EmitLatexOptions } from './math-json/latex/public';
+import { DEFAULT_LATEX_DICTIONARY } from './math-json/latex/definitions';
+import { form } from './math-json/forms';
 
 function latexToMarkup(
     text: string,
@@ -289,6 +291,8 @@ function getOriginalContent(
 const version = '{{SDK_VERSION}}';
 
 export default {
+    DEFAULT_LATEX_DICTIONARY,
+    form,
     version,
     latexToMarkup,
     latexToMathML,
