@@ -14830,8 +14830,8 @@ M500 241 v40 H399408 v-40z M500 435 v40 H400000 v-40z`,
             ifMode: 'text',
             command: 'moveToPreviousPlaceholder',
         },
-        { key: '[Escape]', ifMode: 'math', command: ['switch-mode', 'command'] },
-        { key: '\\', ifMode: 'math', command: ['switch-mode', 'command'] },
+        { key: '[Escape]', ifMode: 'math', command: ['switchMode', 'command'] },
+        { key: '\\', ifMode: 'math', command: ['switchMode', 'command'] },
         {
             key: 'alt+[Equal]',
             ifMode: 'math',
@@ -14928,7 +14928,7 @@ M500 241 v40 H399408 v-40z M500 435 v40 H400000 v-40z`,
         {
             key: 'shift+[Quote]',
             ifMode: 'text',
-            command: ['switch-mode', 'math', '”', ''],
+            command: ['switchMode', 'math', '”', ''],
         },
         // WOLFRAM MATHEMATICA BINDINGS
         {
@@ -38151,6 +38151,8 @@ M500 241 v40 H399408 v-40z M500 435 v40 H400000 v-40z`,
     // This SDK_VERSION variable will be replaced during the build process.
     const version = '0.56.0';
     var mathlive = {
+        DEFAULT_LATEX_DICTIONARY,
+        form,
         version,
         latexToMarkup: latexToMarkup$2,
         latexToMathML,

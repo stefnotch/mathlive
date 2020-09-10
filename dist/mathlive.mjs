@@ -14824,8 +14824,8 @@ const DEFAULT_KEYBINDINGS = [
         ifMode: 'text',
         command: 'moveToPreviousPlaceholder',
     },
-    { key: '[Escape]', ifMode: 'math', command: ['switch-mode', 'command'] },
-    { key: '\\', ifMode: 'math', command: ['switch-mode', 'command'] },
+    { key: '[Escape]', ifMode: 'math', command: ['switchMode', 'command'] },
+    { key: '\\', ifMode: 'math', command: ['switchMode', 'command'] },
     {
         key: 'alt+[Equal]',
         ifMode: 'math',
@@ -14922,7 +14922,7 @@ const DEFAULT_KEYBINDINGS = [
     {
         key: 'shift+[Quote]',
         ifMode: 'text',
-        command: ['switch-mode', 'math', '”', ''],
+        command: ['switchMode', 'math', '”', ''],
     },
     // WOLFRAM MATHEMATICA BINDINGS
     {
@@ -38145,6 +38145,8 @@ function getOriginalContent(element, options) {
 // This SDK_VERSION variable will be replaced during the build process.
 const version = '0.56.0';
 var mathlive = {
+    DEFAULT_LATEX_DICTIONARY,
+    form,
     version,
     latexToMarkup: latexToMarkup$2,
     latexToMathML,
