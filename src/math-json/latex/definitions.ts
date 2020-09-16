@@ -250,7 +250,7 @@ export function getDefaultLatexDictionary(
 // !=   ne
 // https://reference.wolfram.com/language/tutorial/OperatorInputForms.html
 
-const DEFAULT_LATEX_DICTIONARY: {
+export const DEFAULT_LATEX_DICTIONARY: {
     [category in DictionaryCategory]?: LatexDictionary;
 } = {
     algebra: DEFINITIONS_ALGEBRA,
