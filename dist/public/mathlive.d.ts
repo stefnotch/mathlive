@@ -20,9 +20,22 @@
 import { Mathfield } from './mathfield';
 import { MathfieldConfig, TextToSpeechOptions } from './config';
 import { MacroDictionary, ErrorListener, ParserErrorCode } from './core';
-import { ErrorCode as MathJsonErrorCode } from '../math-json/public';
+import { ErrorCode as MathJsonErrorCode, Form, ErrorCode, Expression, Dictionary } from '../math-json/public';
+import { DEFAULT_LATEX_DICTIONARY as DICT } from '../math-json/latex/definitions';
+import { ParseLatexOptions, EmitLatexOptions } from '../math-json/latex/public';
 export { Mathfield };
 export { MathfieldConfig };
+export declare const DEFAULT_LATEX_DICTIONARY: typeof DICT;
+export declare function form(dic: Dictionary, expr: Expression | null, forms: Form[]): Expression | null;
+export declare function latexToMathjson(latex: string, options?: ParseLatexOptions & {
+    macros?: MacroDictionary;
+    onError?: ErrorListener<ErrorCode>;
+    form?: Form | Form[];
+}): Expression;
+export declare function mathjsonToLatex(expr: Expression, options: EmitLatexOptions & {
+    dictionary?: Dictionary;
+    onError?: ErrorListener<ErrorCode>;
+}): string;
 /**
  * Current version: `0.56.0`
  *
